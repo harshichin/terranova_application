@@ -1,0 +1,34 @@
+<mat-nav-list>
+  <a mat-list-item [routerLink]="['/dashboard/home']" [routerLinkActive]="['active']"
+    (keydown.escape)="$event.stopPropagation()"><span class="line"></span>
+    <span class="icon">
+      <img src="../../../assets/images/dashboardicon.svg" class="d-none whiteicon" />
+      <img src="../../../assets/images/dashboardblackicon.svg" class="blackicon" />
+    </span>
+    <span class="listName">Dashboard</span>
+  </a>
+  <a mat-list-item [routerLink]="['/dashboard/create-load']" [routerLinkActive]="['active']"
+  (keydown.escape)="$event.stopPropagation()"><span class="line"></span>
+  <span class="icon">
+    <img src="../../../assets/images/dashboardicon.svg" class="d-none whiteicon" />
+    <img src="../../../assets/images/dashboardblackicon.svg" class="blackicon" />
+  </span>
+  <span class="listName">Create Load</span>
+</a>
+  <a mat-list-item [routerLink]="['/dashboard/client-management']" [routerLinkActive]="['active']"
+  (keydown.escape)="$event.stopPropagation()"><span class="line"></span>
+  <span class="icon">
+    <img src="../../../assets/images/dashboardicon.svg" class="d-none whiteicon" />
+    <img src="../../../assets/images/dashboardblackicon.svg" class="blackicon" />
+  </span>
+  <span class="listName">Client Management</span>
+</a>
+<a mat-list-item [routerLink]="['/dashboard/user-management']" [routerLinkActive]="['active']"
+  (keydown.escape)="$event.stopPropagation()"><span class="line"></span>
+  <span class="icon">
+    <img src="../../../assets/images/dashboardicon.svg" class="d-none whiteicon" />
+    <img src="../../../assets/images/dashboardblackicon.svg" class="blackicon" />
+  </span>
+  <span class="listName">User Management</span>
+</a>
+</mat-nav-list>

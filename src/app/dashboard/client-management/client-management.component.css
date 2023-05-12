@@ -1,0 +1,52 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  .mat-header-cell {
+      font-size: 16px;
+      font-weight: 500;
+  }
+  
+  /* td,
+  th {
+    width: 10%;
+  } */
+  .add {
+    background-color: #5271ff;
+    color: white;
+    border-radius: 5px;
+    margin: 20px;
+  }
+  
+  .card-header{
+     border-bottom: 1px solid lightgray;
+  }
+  .card-header h2{
+    margin-left: 20px;
+  }
+  .mat-elevation-z8{
+    box-shadow: none;
+  }
+  .list{
+    display: block;
+  }
+  .userlist{
+    display: none !important;
+  }
+  .details{
+    display: none;
+  }
+  .userDetails{
+    display: block;
+  }
+  .newUser{
+    background-color: #FFCA27;
+    border: #DCAE22;
+    padding: 8px 10px;
+    border-radius: 5px;
+  }
+  
