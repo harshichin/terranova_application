@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  selector: 'app-client-login',
+  templateUrl: './client-login.component.html',
+  styleUrls: ['./client-login.component.css'],
 })
-export class LoginComponent implements OnInit {
+export class ClientLoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
   show = false;
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
     return this.loginForm.controls;
   }
 
-  loginFormSubmit() {
+  loginFormSubmit1() {
     this.auth.login(this.loginForm.value).subscribe(
       (res) => {
         if (!res.error) {
@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/email']);
   }
 
-  onSubmit() {
+  loginFormSubmit() {
     this.router.navigate(['/dashboard/users']);
   }
 }

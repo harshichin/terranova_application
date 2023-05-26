@@ -6,14 +6,14 @@ import { ServiceService } from 'src/app/service/service.service';
 @Component({
   selector: 'app-add-client',
   templateUrl: './add-client.component.html',
-  styleUrls: ['./add-client.component.css']
+  styleUrls: ['./add-client.component.css'],
 })
 export class AddClientComponent implements OnInit {
   adminForm!: FormGroup;
   constructor(
     private service: ServiceService,
     @Inject(MAT_DIALOG_DATA) public editData: any,
-    private dialogRef: MatDialogRef<AddClientComponent>,
+    private dialogRef: MatDialogRef<AddClientComponent>
   ) {}
 
   ngOnInit(): void {
@@ -22,17 +22,6 @@ export class AddClientComponent implements OnInit {
       emailId: new FormControl('', Validators.required),
       phoneNo: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
-      dashboardAccess: new FormControl(false, Validators.required),
-      userAccess: new FormControl(false, Validators.required),
-      orderAccess: new FormControl(false, Validators.required),
-      contractorAccess: new FormControl(false, Validators.required),
-      machineAccess: new FormControl(false, Validators.required),
-      paymentAccess: new FormControl(false, Validators.required),
-      biddingAccess: new FormControl(false, Validators.required),
-      settingAccess: new FormControl(false, Validators.required),
-      versionAccess: new FormControl(false, Validators.required),
-      notificationAccess: new FormControl(false, Validators.required),
-      userManagementAccess: new FormControl(false, Validators.required),
     });
     if (this.editData) {
       let items = this.editData;
@@ -42,20 +31,10 @@ export class AddClientComponent implements OnInit {
         emailId: items.emailId,
         phoneNo: items.phoneNo,
         password: items.password,
-        dashboardAccess: items.dashboardAccess,
-        userAccess: items.userAccess,
-        orderAccess: items.orderAccess,
-        contractorAccess: items.contractorAccess,
-        machineAccess: items.machineAccess,
-        paymentAccess: items.paymentAccess,
-        biddingAccess: items.biddingAccess,
-        settingAccess: items.settingAccess,
-        versionAccess: items.versionAccess,
-        notificationAccess: items.notificationAccess,
-        userManagementAccess: items.userManagementAccess,
       });
     }
   }
+
   onSubmit() {
     // if (this.editData) {
     //   this.service
@@ -68,7 +47,7 @@ export class AddClientComponent implements OnInit {
     //     this.dialogRef.close('Added');
     //   });
     // }
+
     console.log(this.adminForm.value);
-    
   }
 }

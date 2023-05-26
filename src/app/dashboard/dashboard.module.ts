@@ -11,10 +11,13 @@ import { AddUserComponent } from './dialog/add-user/add-user.component';
 import { AddClientComponent } from './dialog/add-client/add-client.component';
 import { ClientManagementComponent } from './client-management/client-management.component';
 import { CreateLoadComponent } from './create-load/create-load.component';
+import { MasterDataComponent } from './master-data/master-data.component';
+import { LoadsComponent } from './loads/loads.component';
+import { ClientDetailsComponent } from './client-details/client-details.component';
 
 
 @NgModule({
-  declarations: [SidenavComponent, HeaderComponent, DashboardComponent, UserManagementComponent, AddUserComponent, AddClientComponent, ClientManagementComponent, CreateLoadComponent],
+  declarations: [SidenavComponent, HeaderComponent, DashboardComponent, UserManagementComponent, AddUserComponent, AddClientComponent, ClientManagementComponent, CreateLoadComponent, MasterDataComponent, LoadsComponent, ClientDetailsComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

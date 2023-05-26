@@ -31,7 +31,7 @@ export class UserManagementComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getAllAdmins()
+    this.getAllUsers()
   }
 
   openDialog() {
@@ -39,7 +39,7 @@ export class UserManagementComponent implements OnInit {
       width: '550px',
     });
     dialogRef.afterClosed().subscribe((result) => {
-      this.getAllAdmins()
+      this.getAllUsers()
     });
   }
 
@@ -56,8 +56,8 @@ export class UserManagementComponent implements OnInit {
     }
   }
 
-  getAllAdmins(){
-    this.service.getAllAdmins().subscribe(res => {
+  getAllUsers(){
+    this.service.getAllUsers().subscribe(res => {
       this.dataSource.data = res.response
     })
   }

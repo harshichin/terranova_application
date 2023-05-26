@@ -9,10 +9,11 @@ import { AddClientComponent } from '../dialog/add-client/add-client.component';
 @Component({
   selector: 'app-client-management',
   templateUrl: './client-management.component.html',
-  styleUrls: ['./client-management.component.css']
+  styleUrls: ['./client-management.component.css'],
 })
 export class ClientManagementComponent implements OnInit {
   displayedColumns: string[] = [
+    'ClientID',
     'Name',
     'MobileNumber',
     'EmailID',
@@ -25,13 +26,10 @@ export class ClientManagementComponent implements OnInit {
   @ViewChild(MatSort)
   sort!: MatSort;
 
-  constructor(
-    private dialog: MatDialog,
-    private service: ServiceService
-  ) {}
+  constructor(private dialog: MatDialog, private service: ServiceService) {}
 
   ngOnInit(): void {
-    this.getAllAdmins()
+    this.getAllClients();
   }
 
   openDialog() {
@@ -56,14 +54,15 @@ export class ClientManagementComponent implements OnInit {
     }
   }
 
-  getAllAdmins(){
-    this.service.getAllAdmins().subscribe(res => {
-      this.dataSource.data = res.response
-    })
+  getAllClients() {
+    this.service.getAllClients().subscribe((res) => {
+      this.dataSource.data = res.response;
+    });
   }
-  deleteAdmin(id){
-    // this.service.deleteAdmin(id).subscribe(res => {
-    //   this.dataSource.data = res.response
-    // })
+
+  deleteClient(id: any) {
+    this.service.deleteClient(id).subscribe((res) => {
+      this.dataSource.data = res.response;
+    });
   }
 }

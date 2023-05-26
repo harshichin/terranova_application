@@ -1,13 +1,9 @@
-<section>
-    <button mat-raised-button color="primary" (click)="onSubmit()">Login</button>
-  </section>
-
 <div class="container">
   <div class="contnet ">
     <div class="row">
       <div class="col-md-6 offset-md-3 ">
         <div class="login">
-          <h1 style="color: #1D447D;text-align: center;">Welcome Admin</h1>
+          <h1 style="color: #1D447D;text-align: center;">Client Login</h1>
           <mat-card>
             <form class="exampleForm" [formGroup]="loginForm" (ngSubmit)="loginFormSubmit()">
               <div class="form-group">
@@ -42,7 +38,7 @@
               <div class="form-group">
                 <button type="submit" class="loginButton" [disabled]="loginForm.invalid">Log in</button>
                 <!-- <button type="button" mat-button class="resetPassword float-right" (click)="forgotPassword()">Forgot
-                    your password?</button> -->
+                      your password?</button> -->
               </div>
             </form>
           </mat-card>
