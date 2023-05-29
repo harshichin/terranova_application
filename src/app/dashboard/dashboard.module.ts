@@ -14,10 +14,12 @@ import { CreateLoadComponent } from './create-load/create-load.component';
 import { MasterDataComponent } from './master-data/master-data.component';
 import { LoadsComponent } from './loads/loads.component';
 import { ClientDetailsComponent } from './client-details/client-details.component';
+import { AddMaterialDialogComponent } from './dialog/add-material-dialog/add-material-dialog.component';
+import { AddLocationDialogComponent } from './dialog/add-location-dialog/add-location-dialog.component';
 
 
 @NgModule({
-  declarations: [SidenavComponent, HeaderComponent, DashboardComponent, UserManagementComponent, AddUserComponent, AddClientComponent, ClientManagementComponent, CreateLoadComponent, MasterDataComponent, LoadsComponent, ClientDetailsComponent],
+  declarations: [SidenavComponent, HeaderComponent, DashboardComponent, UserManagementComponent, AddUserComponent, AddClientComponent, ClientManagementComponent, CreateLoadComponent, MasterDataComponent, LoadsComponent, ClientDetailsComponent, AddMaterialDialogComponent, AddLocationDialogComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Material</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="materialForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-12">
+        <label>Material Name</label>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <input matInput placeholder="Enter Material Name" formControlName="materialName">
+        </mat-form-field>
+      </div>
+      <div class="col-md-12">
+        <label>Material Code</label>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <input matInput placeholder="Enter Material Code" formControlName="materialCode">
+        </mat-form-field>
+      </div>
+    </div>
+    <div>
+      <div class="float-right">
+        <button class="cancel" mat-button mat-dialog-close>Cancel</button>
+        <button type="submit" [disabled]="materialForm.invalid" class="submit" mat-button>Submit</button>
+      </div>
+
+    </div>
+
+  </form>
+</div>

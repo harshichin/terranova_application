@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Location</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="locationForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-12">
+        <label>Company Name</label>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <input matInput placeholder="Enter Company Name" formControlName="companyName">
+        </mat-form-field>
+      </div>
+      <div class="col-md-12">
+        <label>Location</label>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <input matInput placeholder="Enter Location" formControlName="location">
+        </mat-form-field>
+      </div>
+      <div class="col-md-12">
+        <label>Full Address</label>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <input matInput placeholder="Enter Full Address" formControlName="fullAddress">
+        </mat-form-field>
+      </div>
+    </div>
+    <div>
+      <div class="float-right">
+        <button class="cancel" mat-button mat-dialog-close>Cancel</button>
+        <button type="submit" [disabled]="locationForm.invalid" class="submit" mat-button>Submit</button>
+      </div>
+    </div>
+  </form>
+</div>

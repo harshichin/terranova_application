@@ -72,6 +72,9 @@
                   <button class="btn" routerLink="/dashboard/client/{{row._id}}">
                     <i class="fa fa-eye" aria-hidden="true"></i>
                   </button>
+                  <button class="btn" (click)="editClient(row)">
+                    <i class="fa fa-pen" aria-hidden="true"></i>
+                  </button>
                   <button class="btn" *ngIf="!row.defaults" (click)="deleteClient(row._id)">
                     <i class="fa fa-trash" aria-hidden="true"></i>
                   </button>

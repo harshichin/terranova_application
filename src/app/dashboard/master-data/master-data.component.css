@@ -1,0 +1,31 @@
+:host::ng-deep.mat-ink-bar {
+  display: none !important;
+}
+
+:host::ng-deep.mat-tab-label-active {
+  background-color: #FFCA27;
+  /* border-radius: 3px;
+  padding: 0px 10px;
+  min-width: 60px; */
+}
+
+:host::ng-deep.mat-tab-label {
+  opacity: 1;
+  /* min-width: 60px; */
+  /* height: 35px; */
+}
+
+.mat-table {
+  width: 100%;
+}
+
+.mat-elevation-z8 {
+  box-shadow: none;
+}
+
+.newButton{
+  background-color: #FFCA27;
+  border: #DCAE22;
+  padding: 8px 10px;
+  border-radius: 5px;
+}

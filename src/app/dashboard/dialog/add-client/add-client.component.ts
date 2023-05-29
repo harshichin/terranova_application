@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ServiceService } from 'src/app/service/service.service';
+import { UserService } from 'src/app/service/user/user.service';
 
 @Component({
   selector: 'app-add-client',
@@ -9,24 +10,26 @@ import { ServiceService } from 'src/app/service/service.service';
   styleUrls: ['./add-client.component.css'],
 })
 export class AddClientComponent implements OnInit {
-  adminForm!: FormGroup;
+  userForm!: FormGroup;
   constructor(
-    private service: ServiceService,
+    private userService: UserService,
     @Inject(MAT_DIALOG_DATA) public editData: any,
     private dialogRef: MatDialogRef<AddClientComponent>
   ) {}
 
   ngOnInit(): void {
-    this.adminForm = new FormGroup({
+    this.userForm = new FormGroup({
       name: new FormControl('', Validators.required),
       emailId: new FormControl('', Validators.required),
       phoneNo: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
     });
+    console.log(this.editData);
+
     if (this.editData) {
       let items = this.editData;
       // this.adminForm.controls['name'].setValue(this.editData.name);
-      this.adminForm.setValue({
+      this.userForm.setValue({
         name: items.name,
         emailId: items.emailId,
         phoneNo: items.phoneNo,
@@ -36,18 +39,18 @@ export class AddClientComponent implements OnInit {
   }
 
   onSubmit() {
-    // if (this.editData) {
-    //   this.service
-    //     .update(this.editData._id, this.adminForm.value)
-    //     .subscribe((res) => {
-    //       this.dialogRef.close('updated');
-    //     });
-    // } else {
-    //   this.service.addAdmin(this.adminForm.value).subscribe((res) => {
-    //     this.dialogRef.close('Added');
-    //   });
-    // }
+    if (this.editData) {
+      this.userService
+        .editUser(this.editData._id, this.userForm.value)
+        .subscribe((res) => {
+          this.dialogRef.close('updated');
+        });
+    } else {
+      this.userService.addUser(this.userForm.value).subscribe((res) => {
+        this.dialogRef.close('Added');
+      });
+    }
 
-    console.log(this.adminForm.value);
+    console.log(this.userForm.value);
   }
 }

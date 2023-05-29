@@ -1,25 +1,30 @@
 .logo {
-    text-align: center;
-    padding: 0.8rem 1rem;
+  text-align: center;
+  padding: 0.8rem 1rem;
 }
+
 :host::ng-deep.mat-list-base {
-    padding: 20px !important;
-    overflow: hidden;
-    height: 100%;
-    overflow-y: scroll;
+  padding: 20px !important;
+  overflow: hidden;
+  height: 100%;
+  overflow-y: scroll;
 }
-.logo img{
-    width: 200px;
+
+.logo img {
+  width: 200px;
 }
-.mat-icon{
-    vertical-align: center;
-    margin-right: 1rem;
+
+.mat-icon {
+  vertical-align: center;
+  margin-right: 1rem;
 }
-.mat-divider{
-    border-top-width: 2px;
-    border-color: white;
+
+.mat-divider {
+  border-top-width: 2px;
+  border-color: white;
 }
-.mat-list-item{
+
+.mat-list-item {
   color: #000;
   font-size: 0.8rem;
   height: 35px !important;
@@ -27,97 +32,116 @@
   margin: 10px 0px;
 
 }
-:host::ng-deep.mat-list-base .mat-list-item .mat-list-item-content, .mat-list-base .mat-list-option .mat-list-item-content {
+
+:host::ng-deep.mat-list-base .mat-list-item .mat-list-item-content,
+.mat-list-base .mat-list-option .mat-list-item-content {
   padding: 0 0px;
 }
-.mat-list-item.active .line{
+
+.mat-list-item.active .line {
   border-left: 4px solid #FFCA27;
-    height: 20px;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-   position: absolute;
+  height: 20px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  position: absolute;
 }
-:host::ng-deep .mat-list-item-content{
-    border-radius: 5px;
-    margin:0px;
+
+:host::ng-deep .mat-list-item-content {
+  border-radius: 5px;
+  margin: 0px;
 }
-.listName{
+
+.listName {
   font-weight: 500;
   font-size: 14px;
 }
-.mat-list-item:hover{
-    color: #1D447D !important;
-}
-.far,.fas{
-    font-size: 20px;
-    color: lightgray;
-    margin-right: 1rem;
-}
-.mat-list-item.active{
-    color: white!important;
-    background-color: black;
-    width: 100%;
-    font-weight: 500;
-    border-radius: 5px;
+
+.mat-list-item:hover {
+  color: #1D447D !important;
 }
 
-.mat-list-item.active .blackicon{
-    display: none;
+.far,
+.fas {
+  font-size: 20px;
+  color: lightgray;
+  margin-right: 1rem;
 }
-.mat-list-item.active .whiteicon{
-   display: block !important;
+
+.mat-list-item.active {
+  color: white !important;
+  background-color: black;
+  width: 100%;
+  font-weight: 500;
+  border-radius: 5px;
 }
-.list{
-    margin-left: 40px !important;
-    color:#6B6B6B;
-  }
-.icon{
-    width: 18%;
-    margin-left: 10px;
-  }
-  .example-action-buttons {
-    padding-bottom: 20px;
-  }
 
-  .example-headers-align .mat-expansion-panel-header-title,
-  .example-headers-align .mat-expansion-panel-header-description {
-    flex-basis: 0;
-  }
-
-  .example-headers-align .mat-expansion-panel-header-description {
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .example-headers-align .mat-form-field + .mat-form-field {
-    margin-left: 8px;
-  }
-  .mat-expansion-panel{
-    background: transparent !important;
-    box-shadow: none !important;
-  }
-  .lists{
-    margin-left: 16px !important;
-    color:#6B6B6B;
-    height: 28px !important;
-  }
-  .list.mat-list-item.active{
-    color: #5271ff !important;
-    background-color: transparent;
-    width: 100%;
-    font-weight: 500;
-    border-left: 0px;
-    border-radius: 0px;
+.mat-list-item.active .blackicon {
+  display: none;
 }
-  .lists.mat-list-item.active{
-    color: #5271ff !important;
-    background-color: transparent;
-    border-left: 0px;
-  }
-  ::-webkit-scrollbar {
-    width: 0px;
-  }
-  :host::ng-deep.mat-expansion-panel-header {
-    height: 35px !important;
-    margin: 0px 1px 0px 4px;
+
+.mat-list-item.active .whiteicon {
+  display: block !important;
+}
+
+.list {
+  margin-left: 40px !important;
+  color: #6B6B6B;
+}
+
+.icon {
+  width: 18%;
+  margin-left: 10px;
+}
+
+.example-action-buttons {
+  padding-bottom: 20px;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field+.mat-form-field {
+  margin-left: 8px;
+}
+
+.mat-expansion-panel {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.lists {
+  margin-left: 16px !important;
+  color: #6B6B6B;
+  height: 28px !important;
+}
+
+.list.mat-list-item.active {
+  color: #5271ff !important;
+  background-color: transparent;
+  width: 100%;
+  font-weight: 500;
+  border-left: 0px;
+  border-radius: 0px;
+}
+
+.lists.mat-list-item.active {
+  color: #5271ff !important;
+  background-color: transparent;
+  border-left: 0px;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+:host::ng-deep.mat-expansion-panel-header {
+  height: 35px !important;
+  margin: 0px 1px 0px 4px;
 }

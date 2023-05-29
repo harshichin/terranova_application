@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ClientService } from 'src/app/service/client/client.service';
+import { LoadService } from 'src/app/service/load/load.service';
 import { ServiceService } from 'src/app/service/service.service';
 
 @Component({
@@ -11,7 +13,11 @@ export class ClientDetailsComponent implements OnInit {
   data;
   id;
   list = 0;
-  constructor(private service: ServiceService, private route: ActivatedRoute) {}
+  constructor(
+    private clientService: ClientService,
+    private loadService: LoadService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
@@ -21,13 +27,13 @@ export class ClientDetailsComponent implements OnInit {
   }
 
   getClient() {
-    this.service.getClient(this.id).subscribe((res) => {
+    this.clientService.getClient(this.id).subscribe((res) => {
       this.data = res.response;
     });
   }
 
   getClientLoads() {
-    this.service.getClientLoads(this.id).subscribe((res) => {
+    this.clientService.getClientLoads(this.id).subscribe((res) => {
       this.list = 0;
       // if (this.list.length == 0) {
       // }

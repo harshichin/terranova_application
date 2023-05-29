@@ -1,14 +1,12 @@
 label{
     color: #797A79;
 }
-.basicdetails{
+.basicDetails{
     border-bottom: 1px dashed black;
     padding: 10px;
+    font-weight: 600;
 }
 .pastHistory .card{
     background-color: #f6f4f4;
     border-color: #DDDDDD;
-}
-.basicdetails p{
-  font-weight: 600;
 }

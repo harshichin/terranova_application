@@ -3,13 +3,13 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { ServiceService } from 'src/app/service/service.service';
+import { UserService } from 'src/app/service/user/user.service';
 import { AddUserComponent } from '../dialog/add-user/add-user.component';
 
 @Component({
   selector: 'app-user-management',
   templateUrl: './user-management.component.html',
-  styleUrls: ['./user-management.component.css']
+  styleUrls: ['./user-management.component.css'],
 })
 export class UserManagementComponent implements OnInit {
   displayedColumns: string[] = [
@@ -25,13 +25,10 @@ export class UserManagementComponent implements OnInit {
   @ViewChild(MatSort)
   sort!: MatSort;
 
-  constructor(
-    private dialog: MatDialog,
-    private service: ServiceService
-  ) {}
+  constructor(private dialog: MatDialog, private userService: UserService) {}
 
   ngOnInit(): void {
-    this.getAllUsers()
+    this.getAllUsers();
   }
 
   openDialog() {
@@ -39,7 +36,7 @@ export class UserManagementComponent implements OnInit {
       width: '550px',
     });
     dialogRef.afterClosed().subscribe((result) => {
-      this.getAllUsers()
+      this.getAllUsers();
     });
   }
 
@@ -56,12 +53,13 @@ export class UserManagementComponent implements OnInit {
     }
   }
 
-  getAllUsers(){
-    this.service.getAllUsers().subscribe(res => {
-      this.dataSource.data = res.response
-    })
+  getAllUsers() {
+    this.userService.getAllUsers().subscribe((res) => {
+      this.dataSource.data = res.response;
+    });
   }
-  deleteAdmin(id){
+
+  deleteAdmin(id) {
     // this.service.deleteAdmin(id).subscribe(res => {
     //   this.dataSource.data = res.response
     // })

@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { ServiceService } from 'src/app/service/service.service';
+import { ClientService } from 'src/app/service/client/client.service';
 import { AddClientComponent } from '../dialog/add-client/add-client.component';
 
 @Component({
@@ -26,7 +26,10 @@ export class ClientManagementComponent implements OnInit {
   @ViewChild(MatSort)
   sort!: MatSort;
 
-  constructor(private dialog: MatDialog, private service: ServiceService) {}
+  constructor(
+    private dialog: MatDialog,
+    private clientService: ClientService
+  ) {}
 
   ngOnInit(): void {
     this.getAllClients();
@@ -55,14 +58,27 @@ export class ClientManagementComponent implements OnInit {
   }
 
   getAllClients() {
-    this.service.getAllClients().subscribe((res) => {
+    this.clientService.getAllClients().subscribe((res) => {
       this.dataSource.data = res.response;
     });
   }
 
   deleteClient(id: any) {
-    this.service.deleteClient(id).subscribe((res) => {
+    this.clientService.deleteClient(id).subscribe((res) => {
+      if (!res.error) {
+        this.getAllClients();
+      }
       this.dataSource.data = res.response;
+    });
+  }
+
+  editClient(data: any) {
+    const dialogRef = this.dialog.open(AddClientComponent, {
+      width: '800px',
+      data,
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      // this.getAllAdmins()
     });
   }
 }
